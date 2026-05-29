@@ -49,8 +49,7 @@ Research
   
 Talks
 ======
-  {% assign talks_sorted = site.talks | sort: 'date' | reverse %}
-  <ul>{% for post in talks_sorted %}
+  <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   

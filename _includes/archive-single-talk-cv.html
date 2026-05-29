@@ -12,19 +12,8 @@
   {% assign title = post.title %}
 {% endif %}
 
-{%- comment -%} compute latest venue date for sorting (fallback to post.date) {%- endcomment -%}
-{% assign latest_venue_date = post.date %}
-{% if post.venue %}
-  {% assign latest_venue_date = post.date %}
-{% endif %}
-{% if post.venues %}
-  {% assign venues_sorted = post.venues | sort: 'date' | reverse %}
-  {% if venues_sorted.first.date %}
-    {% assign latest_venue_date = venues_sorted.first.date %}
-  {% endif %}
-{% endif %}
 <div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork" data-post-date="{{ post.date | date_to_xmlschema }}" data-latest-venue-date="{{ latest_venue_date | date_to_xmlschema }}">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     <li>
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
