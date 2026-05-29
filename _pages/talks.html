@@ -11,6 +11,19 @@ author_profile: true
 
 {% endif %}
 
-{% for post in site.talks reversed %}
+{% assign talks_sorted = site.talks | sort: 'date' | reverse %}
+<div class="talks-controls" style="margin-bottom:1rem;">
+  <label for="talk-order-select">Sort talks:</label>
+  <select id="talk-order-select" aria-label="Sort talks">
+    <option value="post-date-desc">Most recent post date</option>
+    <option value="post-date-asc">Oldest post date</option>
+    <option value="venue-date-desc">Most recent presentation date</option>
+    <option value="venue-date-asc">Oldest presentation date</option>
+  </select>
+</div>
+<div id="talks-list">
+{% for post in talks_sorted %}
   {% include archive-single-talk.html %}
 {% endfor %}
+</div>
+<script src="/assets/js/talk-order.js"></script>
