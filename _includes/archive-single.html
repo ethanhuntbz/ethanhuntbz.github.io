@@ -34,9 +34,7 @@
       {% endif %}
     </h2>
     
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
+    {%- comment -%} removed read_time display for blog post listings per request {%- endcomment -%}
 
         {% if post.collection == 'teaching' %}
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
@@ -55,19 +53,7 @@
         {% endif %}
 
     {% if post.authors %}
-      <p class="page__meta"><i class="fa fa-fw fa-user" aria-hidden="true"></i> <strong>Authors:</strong> 
-        {% if post.authors == post.authors | join: "," %}
-          {{ post.authors }}
-        {% else %}
-          {% for author in post.authors %}
-            {% if forloop.last %}
-              {{ author }}
-            {% else %}
-              {{ author }},
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      </p>
+      <p class="page__meta"><i class="fa fa-fw fa-user" aria-hidden="true"></i> <strong>Authors:</strong> {{ post.authors | join: ", " }}</p>
     {% endif %}
 
     {% if post.excerpt and site.read_more != 'enabled' %}

@@ -40,14 +40,14 @@
     {% if post.venues %}
       {% for venue_item in post.venues %}
         <p class="archive__item-excerpt" itemprop="description">
-          <strong>{{ post.type }}</strong>, {{ venue_item.venue }}, {{ venue_item.location }} 
+          {{ venue_item.venue }}, {{ venue_item.location }}
           <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ venue_item.date | date: '%B %d, %Y' }}
         </p>
       {% endfor %}
     <!-- Fallback to single venue (backward compatible) -->
     {% elsif post.venue %}
       {% if post.date %}<p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
-      <p class="archive__item-excerpt" itemprop="description">{{post.type}}, {{ post.venue }},  {{post.location}} </p>
+      <p class="archive__item-excerpt" itemprop="description">{{ post.venue }}, {{ post.location }}</p>
     {% endif %}
     
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
