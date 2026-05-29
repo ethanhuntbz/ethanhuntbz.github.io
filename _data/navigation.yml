@@ -11,8 +11,6 @@ main:
   - title: "Blog Posts"
     url: /year-archive/
     
-  - title: "Talks"
-    url: /talks/    
      
   - title: "CV"
     url: /files/CV_Ethan_H.pdf
