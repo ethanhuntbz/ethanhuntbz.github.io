@@ -40,8 +40,8 @@
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.collection == 'research' and post.category != 'ba_thesis' and post.category != 'working_papers' %}
           <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.collection == null and post.venue %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Published in:</strong> <i>{{ post.venue }}</i> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+        {% elsif post.venue %}
+          <p class="page__date"><strong><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Published in:</strong> <i>{{ post.venue }}</i>{% if post.date %} <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time>{% endif %}</p>
         {% elsif post.date %}
           {% if post.collection == 'research' and post.category == 'ba_thesis' %}
             <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Submitted:</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
