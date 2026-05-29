@@ -1,6 +1,7 @@
 ---
 title: "Evaluating the Development Impacts of Climate Finance"
 collection: talks
+category: presentations
 type: "Talk"
 permalink: /talks/GB
 venues:

@@ -1,6 +1,7 @@
 ---
 title: "Soverign Green Bonds and Climate Change Mitigation in the Global South"
 collection: talks
+category: presentations
 type: "Talk"
 permalink: /talks/GB
 venues:

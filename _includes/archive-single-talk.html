@@ -32,22 +32,18 @@
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-    
-    <!-- Display multiple venue presentations if available -->
+    <!-- Display multiple venue presentations if available (compact spacing, no leading 'Talk') -->
     {% if post.venues %}
       {% for venue_item in post.venues %}
-        <p class="archive__item-excerpt" itemprop="description">
-          <strong>{{ post.type }}</strong>, {{ venue_item.venue }}, {{ venue_item.location }} 
+        <div class="archive__venue" style="margin:0 0 .25rem 0; padding:0;">
+          {{ venue_item.venue }}, {{ venue_item.location }}
           <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ venue_item.date | date: '%B %d, %Y' }}
-        </p>
+        </div>
       {% endfor %}
     <!-- Fallback to single venue (backward compatible) -->
     {% elsif post.venue %}
-      {% if post.date %}<p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
-      <p class="archive__item-excerpt" itemprop="description">{{post.type}}, {{ post.venue }},  {{post.location}} </p>
+      {% if post.date %}<div class="archive__meta" style="margin:0 0 .25rem 0;"><i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</div>{% endif %}
+      <div class="archive__venue" style="margin:0 0 .25rem 0; padding:0;">{{ post.venue }}, {{ post.location }}</div>
     {% endif %}
     
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
