@@ -1,5 +1,5 @@
 ---
-title: "Soverign Green Bonds and Climate Change Mitigation in the Global South"
+title: "Sovereign Green Bonds and Climate Change Mitigation in the Global South"
 collection: research
 category: working_papers
 permalink: /research/2025-06-27-climate-finance-1
