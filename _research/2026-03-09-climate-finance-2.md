@@ -3,7 +3,7 @@ title: "Evaluating the Development Impacts of Climate Finance"
 collection: research
 category: ba_thesis
 permalink: /research/2026-03-09-climate-finance-2
-excerpt: 'This paper makes a novel contribution by exploring a wide-array of development-related externalities associated with climate finance and utilizing a novel dataset relative to the existing literature.'
+excerpt: 'This paper makes a novel contribution by exploring a wide-array of development-related externalities associated with climate finance and utilizing a more recent and comprehensive dataset relative to the existing literature.'
 date: 2026-03-09
 paperurl: 'https://ethanhuntbz.github.io/files/IS_Ethan_H.pdf'
 citation: "Hunt, Ethan. (2026). &quot;Evaluating the Development Impacts of Climate Finance.&quot; <i>Senior Independent Study Theses</i>. https://openworks.wooster.edu/independentstudy/13282/"
